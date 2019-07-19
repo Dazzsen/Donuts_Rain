@@ -42,12 +42,12 @@ class Obstacle2 {
       this.posY += this.velY
   
   
-      if(this.posY > window.innerHeight - this.height) { 
-        this.posY = window.innerHeight - this.height
+      if(this.posY > this.CnHeight - this.height) { 
+        this.posY = this.CnHeight - this.height
         this.velY *= -1 
       }
-      if(this.posX > window.innerWidth - this.width) { 
-        this.posX = window.innerWidth - this.width
+      if(this.posX > this.CnWidth - this.width) { 
+        this.posX = this.CnWidth - this.width
         this.velX *= -1 
       }
       if(this.posX < 0) { 
