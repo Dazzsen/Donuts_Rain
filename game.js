@@ -20,13 +20,7 @@ const Game = {
     SPACE: {key: 90, down : false},
   },
 
-  
 
-  // keys : {
-  //   LEFT_KEY : 37,
-  //   RIGHT_KEY : 39,
-  //   SPACE: 32
-  // },
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -130,7 +124,7 @@ const Game = {
         //console.log('MUERTO GRANDE')
 
       } if (this.lifes.length <= 0){
-        //console.log('VACIO')
+      
         this.gameOver()
        ///////////////////////////////////////////7/////////////////////////////////////
       }
@@ -204,7 +198,6 @@ const Game = {
               this.obstacles2.splice(idx, 1)
               this.player.bullets.splice(_idx, 1)
               this.score += 30
-                //console.log('PEQUEÑA')
              
                 }
               })
@@ -261,7 +254,8 @@ const Game = {
       this.ctx.textAlign = "center"
       this.ctx.fillText("INSERT COIN", window.innerWidth /2, (window.innerHeight/2) + 40)
       document.getElementById("sim").pause()
-   
+    }
+      
   }
 
 
@@ -298,5 +292,4 @@ const Game = {
   
     // },
 
-}
 

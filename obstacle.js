@@ -40,9 +40,18 @@ class Obstacle {
     this.posY += this.velY
 
 
-    this.posY > window.innerHeight - this.height ? this.velY *= -1 : null
-    this.posX > window.innerWidth - this.width ? this.velX *= -1 : null
-    this.posX < 0 ? this.velX *= -1 : null
+    if(this.posY > window.innerHeight - this.height) { 
+      this.posY = window.innerHeight - this.height
+      this.velY *= -1 
+    }
+    if(this.posX > window.innerWidth - this.width) { 
+      this.posX = window.innerWidth - this.width
+      this.velX *= -1 
+    }
+    if(this.posX < 0) { 
+      this.posX = 0
+      this.velX *= -1
+    } 
   }
 
 }
