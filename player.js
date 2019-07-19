@@ -29,6 +29,11 @@ class Player {
 
     this.bullets = []
 
+    this.gravity = .4
+
+    this.velX = 0
+
+    this.velY = 0
 
     this.setListeners()
   }
@@ -46,39 +51,75 @@ class Player {
   move(){
     this.bullets.forEach( bullet => bullet.move())
   }
+
+  moveP(){
+    this.posX < window.innerWidth + this.width ? this.velX = 0 : null
+
+    if(this.keys.RIGHT_KEY.down && this.posX <= this.CWidth - this.width){
+      this.posX += 15
+      this.velX += 1
+    }
+
+    if(this.keys.LEFT_KEY.down && this.posX > 0) {
+      this.posX -= 15
+      this.velX -= 1
+    }
+
+    if(this.keys.SPACE.down)
+      this.shoot()
+  }
   
 
   setListeners() {
     document.onkeydown = (e) => {
       switch (e.keyCode) {
-    
-          // case 38: 
-          // this.posY -= 10               // FUNCION MOVER EN TODAS DIRECCIONES
-          // break;
 
-          // case 40: 
-          // this.posY +=10
-          // break;
-
-          case 37: 
-          if(this.posX>0){
-            this.posX -=  25
-          }
-
+          case this.keys.RIGHT_KEY.key:
+            this.keys.RIGHT_KEY.down = true
           break;
 
-          case 39:
-            if(this.posX<this.CWidth - this.width){
-              this.posX += 25
-            }
-          break;
+          case this.keys.LEFT_KEY.key:
+              this.keys.LEFT_KEY.down = true
+            break;
 
-          case 32:
+          case this.keys.SPACE.key:
           this.shoot()
-          break; 
+         break; 
           }
       } 
+
+      document.onkeyup = (e) => {
+        switch (e.keyCode){
+          // case this.keys.TOP_KEY.key:
+          //   this.keys.TOP_KEY.down = false
+          // break;
+
+          case this.keys.RIGHT_KEY.key:
+            this.keys.RIGHT_KEY.down = false
+          break;
+
+          case this.keys.LEFT_KEY.key:
+            this.keys.LEFT_KEY.down = false
+          break;
+
+         
+
+          
+        }
+      }
     } 
+
+
+    // setListeners2() {
+    //   document.onkeydown = (e) => {
+    //     switch (e.keyCode) {
+  
+    //         case 32:
+    //         this.shoot()
+    //         break; 
+    //         }
+    //     } 
+    //   } 
 
     shoot() {
 

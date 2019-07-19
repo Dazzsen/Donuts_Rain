@@ -1,0 +1,31 @@
+
+
+
+.buttom{
+  padding: 40px 70px;
+  display: block;
+  color: palevioletred;
+  text-align: center;
+  background-color: yellow;
+  font-family: chilanka;
+  font-size: 2.5em;
+  font-style: italic;
+  border-color:black;
+  margin: 0 auto;
+  margin-top: 0px;
+  font-weight: bolder;
+}
+
+
+
+div {
+  background: url(img/start.jpg) no-repeat center / cover;
+
+  padding: 245px 0;
+  text-align: center;
+
+}
+
+.out{
+  display: none;
+}

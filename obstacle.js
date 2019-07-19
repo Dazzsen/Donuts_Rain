@@ -17,12 +17,16 @@ class Obstacle {
 
     // ESTAS SON LAS POSICONES DEL DONUT (LA IMAGEN)
     // la posicion por la que saldrá el donut será random
-    this.posX = Math.random() * (this.CnWidth - 0) + 0;
-    
+    this.posX = Math.random() * ((this.CnWidth - this.width) - 0) + 0;
+    //this.posX = 0
     //this.posX = this.CnWidth / 2 - this.width / 2
-    this.posY0 = this.CnHeight - this.height  //Guardamos la posicion original para usarla como suelo
-    this.posY = 0
+    //this.posY0 = this.CnHeight - this.height  //Guardamos la posicion original para usarla como suelo
+    this.posY = -60
 
+    this.velX = 4
+    this.velY = .4
+    this.gravity = .40
+    
   
   }
 
@@ -31,9 +35,14 @@ class Obstacle {
   }
 
   move() {
-    let gravity = 0.7
-    this.posY += gravity
-  }
+    this.posX += this.velX
+    this.velY += this.gravity
+    this.posY += this.velY
 
+
+    this.posY > window.innerHeight - this.height ? this.velY *= -1 : null
+    this.posX > window.innerWidth - this.width ? this.velX *= -1 : null
+    this.posX < 0 ? this.velX *= -1 : null
+  }
 
 }

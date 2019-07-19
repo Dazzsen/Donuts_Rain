@@ -5,7 +5,7 @@ class Background {
     this.heightC = h
 
     this.image = new Image()
-    this.image.src = "img/casa.jpg"
+    this.image.src = "img/casa2.jpg"
   
 
     this.width =  this.widthC     // tamañp horizontal fondo

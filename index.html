@@ -4,17 +4,37 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Bubble</title>
+  <title>Donuts Rain</title>
+
+  <link rel="stylesheet" href="style.css">
+
  <!-- <script src="scoreboard.js"></script> -->
+ <script src="insertCoin.js"></script>
+ <script src="scoreboard.js"></script>
+ <script src="lifeboard.js"></script>
+ <script src="obstacle2.js"></script>
  <script src="obstacle.js"></script>
+ <script src="player.js"></script> 
  <script src="bullets.js"></script> 
-  <script src="player.js"></script> 
   <script src="background.js"></script>
   <script src="game.js"></script>
-  <script src="index.js"></script>
+  <script src="index.js"></script>  
+
+  <audio id="eructo" src="audio/burp.mp3"></audio>
+  <audio id="doh" src="audio/doh.mp3"></audio>
+  <audio id="bite" src="audio/bite.mp3"></audio>
+  <audio loop id="sim" src="audio/simpsons.mp3"></audio>
+
 </head>
 <body>
   
-  <canvas id="canvas"></canvas>
+  <div id="start">
+
+    <button id="start-button" class="buttom">START GAME</button>
+  </div>
+  
+  <canvas id="canvas">
+    
+  </canvas>
 </body>
 </html>
