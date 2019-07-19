@@ -34,33 +34,27 @@ class Obstacle2 {
     this.ctx.drawImage(this.image, this.posX, this.posY, this.width, this.height)
   }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  move() {
+  
 
-   if (this.posY <= this.CnHeight){
-    this.posX += this.velX
-    this.velY += this.gravity
-    this.posY += this.velY
-    }else{
-      this.posY = this.CnHeight - this.height
+    move() {
+      this.posX += this.velX
+      this.velY += this.gravity
+      this.posY += this.velY
+  
+  
+      if(this.posY > window.innerHeight - this.height) { 
+        this.posY = window.innerHeight - this.height
+        this.velY *= -1 
+      }
+      if(this.posX > window.innerWidth - this.width) { 
+        this.posX = window.innerWidth - this.width
+        this.velX *= -1 
+      }
+      if(this.posX < 0) { 
+        this.posX = 0
+        this.velX *= -1
+      } 
     }
-
-
-
-    // REBOTE CON LAS PAREDES
-    if(this.posY > window.innerHeight - this.height) { 
-      this.posY = window.innerHeight - this.height
-      this.velY *= -1 
-    }
-    if(this.posX > window.innerWidth - this.width) { 
-      this.posX = window.innerWidth - this.width
-      this.velX *= -1 
-    }
-    if(this.posX < 0) { 
-      this.posX = 0
-      this.velX *= -1
-    } 
-  }
-  }
 
 }
 
